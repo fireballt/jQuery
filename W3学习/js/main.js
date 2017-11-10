@@ -3,7 +3,6 @@ $(document).ready(function(){
 	var $nav = $("#nav");
 	var $menu = $("#menu");
 	$nav.hide();
-
 	$nav.animate({right:'-210px'});
 
 	$menu.click(function(){
