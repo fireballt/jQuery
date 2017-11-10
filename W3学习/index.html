@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery</title>
+	<meta charset="utf-8">
+
+</head>
+<body>
+	<style type="text/css">
+		.blue{color:blue;}	
+	</style>
+	<div>
+	<input type="button" id="btn1" name="1233" value="修改value值">
+	<input type="button" id="btn2" name="1233" value="设置属性">
+	<a href="#" id="a1">a1</a>
+	</div>
+	<div>
+		<p>段落</p>
+		<p>2段落</p>
+		<ol>
+			<li>1</li>
+			<li>2</li>
+		</ol>
+		<input type="button" id="btn3" value="添加文本">
+	</div>
+	<div>
+		<p id="E">EEEE</p>
+		<input type="button" id="btn4" value="之前文本">
+		<input type="button" id="btn5" value="之后添加文本">
+		<input type="button" id="btn6" value="多文本添加">
+	</div>
+	<div>
+		<p id="A">添加class</p>
+		<input type="button" id="btn7" value="添加class">
+
+	</div>
+	<script src="jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function (){
+			$("#btn1").click(function(){
+				// $(this).hide();
+				$(this).val("修改后");
+
+			});
+			$("#btn2").click(function(){
+				// $(this).hide();
+				$("#a1").attr({
+					"href" : "#2",
+					"title" :"jQuer "
+				});
+				title = $("#a1").attr('title');
+				$("#a1").html(title);
+			});
+			$("#btn3").click(function(){
+				$("p").append("<b>追加文本</b>");
+				$("ol").append("<li>3</li>");
+			});
+			$("#btn4").click(function(){
+				$("#E").before("<b>之前</b>");
+			});
+			$("#btn5").click(function(){
+
+				$("#E").after("<i>之后</i>");
+			});
+			$("#btn6").click(function(){
+				var txt1 = "<i>I </i>";
+				var txt2 = $("<i></i>").text("love");
+				var txt3 = document.createElement("big");
+				txt3.innerHTML = "YOU";
+				$("#E").after(txt1,txt2,txt3);
+			});
+			$("#btn7").click(function(){
+				$("#A").addClass("blue");
+			});
+
+		}); 
+	</script>
+</body>
+</html>
